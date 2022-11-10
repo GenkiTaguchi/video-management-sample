@@ -14,12 +14,11 @@ def make_authorized_post_request(target_url, json={}):
     return response
 
 if __name__ == "__main__":
-    url = os.environ.get('CLOUD_FUNCTIONS_URL_FOR_SQL_INSERT')
+    url = "https://some.cloud.functions.trigger.url"
     json = {
-        "camera_id": 'B-3',
-        "cycle_id": 'A-1',
-        "video_url": video_url,
-        "video_length": 300
+        "key1": 'value1',
+        "key2": 'value2',
+        "key3": 3
     }
 
     result = make_authorized_post_request(
