@@ -38,4 +38,4 @@ def insert(request):
             conn.execute(stmt)
     except Exception as e:
         return 'Error: {}'.format(str(e))
-    return f'Metadata {request_json} are successfully saved!!'
+    return 'ok', 200
