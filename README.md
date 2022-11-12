@@ -62,7 +62,7 @@ gcloud iam service-accounts keys create ~/sa-private-key.json \
     --iam-account=video-management@${PROJECT_ID}.iam.gserviceaccount.com
 ```
 
-Copy the content of the service account key onto your local node, and then remove the key from your Cloud Shell.
+Copy the content of the service account key onto your local node.
 
 `💻 local`
 ```sh
@@ -72,15 +72,17 @@ vim sa-private-key.json
 cd ..
 ```
 
-```sh
-rm sa-private-key.json
-```
-
 Edit .env file on your local node and set the service account key as your default Google Cloud credentials.
 
-
+`💻 local`
 ```sh
 GOOGLE_APPLICATION_CREDENTIALS=./service_account_keys/sa-private-key.json
+```
+
+Go back to your Cloud Shell and remove the key from your Cloud Shell.
+
+```sh
+rm sa-private-key.json
 ```
 
 ###Configure Cloud Storage
