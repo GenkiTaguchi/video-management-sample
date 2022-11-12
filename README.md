@@ -42,7 +42,7 @@ Enable services.
 ```sh
 gcloud services enable \
   storage.googleapis.com \
-  pubsub.googleapis.com \
+  pubsub.googleapis.com
 ```
 
 ### Configure Service Accounts
@@ -52,10 +52,9 @@ Create a service account for video-management service.
 gcloud iam service-accounts create video-management
 ```
 
+Create a service account key.
 > **Warning**
 > Only run this command in case you have no other way to authenticate on-premise machines and you want to manage the keys programmatically.
-
-Create a service account key.
 
 ```sh
 gcloud iam service-accounts keys create ~/sa-private-key.json \
@@ -79,7 +78,7 @@ Edit .env file on your local node and set the service account key as your defaul
 GOOGLE_APPLICATION_CREDENTIALS=./service_account_keys/sa-private-key.json
 ```
 
-Go back to your Cloud Shell and remove the key from your Cloud Shell.
+Go back to your Cloud Shell and remove the key.
 
 ```sh
 rm sa-private-key.json
@@ -95,7 +94,8 @@ gsutil mb gs://${PROJECT_ID}-videos
 Add an “Object Creator” role to the service account for the storage bucket you just created.
 
 ```sh
-gsutil iam ch \ "serviceAccount:video-management@${PROJECT_ID}.iam.gserviceaccount.com:objectCreator" \
+gsutil iam ch \
+  "serviceAccount:video-management@${PROJECT_ID}.iam.gserviceaccount.com:objectCreator" \
   gs://${PROJECT_ID}-videos
 ```
 
