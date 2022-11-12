@@ -121,3 +121,8 @@ python upload_test.py
 ## Publish a message to Pub/Sub
 
 ### Configure Pub/Sub
+
+
+## References
+* [Create and manage service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#iam-service-account-keys-create-gcloud)
+* 
