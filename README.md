@@ -19,6 +19,9 @@ Create .env file on the cloned repository
 cd video-management-sample
 touch .env
 ```
+> **Warning**
+> DO NOT include any sensitive information or raw credentials in .env file if you push the file to the repository.
+
 
 ## Set up your Google Cloud environment
 
@@ -107,7 +110,6 @@ BUCKET_NAME=YOUR_PROJECT_ID-videos
 ```
 
 Now you can upload the file from your local node to Cloud Storage.
-Run ‘upload_test.py’
 
 `💻 local`
 ```sh
