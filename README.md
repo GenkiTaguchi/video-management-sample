@@ -87,6 +87,8 @@ Go back to your Cloud Shell and remove the key.
 rm sa-private-key.json
 ```
 
+## Upload a video from your local node to Cloud Storage
+
 ### Configure Cloud Storage
 Create a storage bucket.
 
@@ -116,15 +118,6 @@ Now you can upload the file from your local node to Cloud Storage.
 python upload_test.py
 ```
 
+## Publish a message from your local node to Pub/Sub
 
-
-
-
-
-
-
-
-
-
-
-
+### Configure Pub/Sub
