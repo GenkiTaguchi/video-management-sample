@@ -52,10 +52,10 @@ Create a service account for video-management service.
 gcloud iam service-accounts create video-management
 ```
 
-**Warning**
-Only run this command in case you have no other way to authenticate on-premise machines and you want to manage the keys programmatically.
+> **Warning**
+> Only run this command in case you have no other way to authenticate on-premise machines and you want to manage the keys programmatically.
 
-Create a service account key
+Create a service account key.
 
 ```sh
 gcloud iam service-accounts keys create ~/sa-private-key.json \
@@ -85,7 +85,7 @@ Go back to your Cloud Shell and remove the key from your Cloud Shell.
 rm sa-private-key.json
 ```
 
-###Configure Cloud Storage
+### Configure Cloud Storage
 Create a storage bucket.
 
 ```sh
