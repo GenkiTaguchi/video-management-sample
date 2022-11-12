@@ -37,6 +37,7 @@ gcloud auth application-default login
 Set environment variables.
 
 ```sh
+echo 'export PROJECT_ID="$(gcloud config get-value project)"' > .envrc
 source .envrc
 ```
 
