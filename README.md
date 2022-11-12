@@ -20,8 +20,8 @@ cd video-management-sample
 touch .env
 ```
 > **Warning**  
-> DO NOT include any sensitive information or raw credentials in .env file if you push the file to the repository.  
-> DO NOT push .env file to the repository if you include the sensitive information or raw credentials. Make sure to include .env file in .gitignore file.
+> ① DO NOT include any sensitive information or raw credentials in .env file if you push it to the repository.  
+> ② DO NOT push .env file to the repository if you include the sensitive information or raw credentials in it.
 
 ## Set up your Google Cloud environment
 
@@ -56,7 +56,7 @@ gcloud iam service-accounts create video-management
 ```
 
 Create a service account key.
-> **Warning**
+> **Warning**  
 > Only run this command in case you have no other way to authenticate on-premise machines and you want to manage the keys programmatically.
 
 ```sh
