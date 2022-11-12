@@ -22,11 +22,10 @@ touch .env
 
 ## Set up your Google Cloud environment
 
-Go to console.cloud.google.com and create a project for this prototyping.
+Go to [Google Cloud](https://console.cloud.google.com/) and create a project for this prototyping.
 
-Set your project ID.
+Open your Cloud Shell and set your project ID.
 
-`💭 cloud`
 ```sh
 gcloud config set project YOUR-PROJECT-ID
 gcloud auth application-default login
@@ -34,14 +33,12 @@ gcloud auth application-default login
 
 Set environment variables.
 
-`💭 cloud`
 ```sh
 source .envrc
 ```
 
 Enable services.
 
-`💭 cloud`
 ```sh
 gcloud services enable \
   storage.googleapis.com \
@@ -51,8 +48,7 @@ gcloud services enable \
 ### Configure Service Accounts
 Create a service account for video-management service.
 
-`💭 cloud`
-```
+```sh
 gcloud iam service-accounts create video-management
 ```
 
@@ -61,38 +57,42 @@ Only run this command in case you have no other way to authenticate on-premise m
 
 Create a service account key
 
-`💭 cloud`
-```
+```sh
 gcloud iam service-accounts keys create ~/sa-private-key.json \
     --iam-account=video-management@${PROJECT_ID}.iam.gserviceaccount.com
 ```
 
-Copy and paste the content of the service account key onto your local node, and then remove the key from your Cloud Shell.
+Copy the content of the service account key onto your local node, and then remove the key from your Cloud Shell.
 
-`💭 cloud`
+`💻 local`
+```sh
+mkdir service_account_keys
+cd service_account_keys/
+vim sa-private-key.json
+cd ..
 ```
+
+```sh
 rm sa-private-key.json
 ```
 
 Edit .env file on your local node and set the service account key as your default Google Cloud credentials.
 
-`💭 cloud`
-```
+
+```sh
 GOOGLE_APPLICATION_CREDENTIALS=./service_account_keys/sa-private-key.json
 ```
 
 ###Configure Cloud Storage
 Create a storage bucket.
 
-`💭 cloud`
-```
+```sh
 gsutil mb gs://${PROJECT_ID}-videos
 ```
 
 Add an “Object Creator” role to the service account for the storage bucket you just created.
 
-`💭 cloud`
-```
+```sh
 gsutil iam ch \ "serviceAccount:video-management@${PROJECT_ID}.iam.gserviceaccount.com:objectCreator" \
   gs://${PROJECT_ID}-videos
 ```
@@ -100,7 +100,7 @@ gsutil iam ch \ "serviceAccount:video-management@${PROJECT_ID}.iam.gserviceaccou
 Edit .env file on your local node and set the bucket name.
 
 `💻 local`
-```
+```sh
 BUCKET_NAME=YOUR_PROJECT_ID-videos
 ```
 
@@ -108,7 +108,7 @@ Now you can upload the file from your local node to Cloud Storage.
 Run ‘upload_test.py’
 
 `💻 local`
-```
+```sh
 python upload_test.py
 ```
 
