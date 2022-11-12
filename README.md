@@ -1,7 +1,7 @@
 # Video Management Sample
 
 ## Purpose
-Create an application which uploads videos and metadata to Google Cloud Platform from local nodes.
+Upload videos and metadata to Google Cloud Platform from your local node.
 
 ## Set up your local environment
 
