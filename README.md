@@ -19,10 +19,8 @@ Create .env file on the cloned repository
 cd video-management-sample
 touch .env
 ```
-> **Warning**
-
-> DO NOT include any sensitive information or raw credentials in .env file if you push the file to the repository.
-
+> **Warning**  
+> DO NOT include any sensitive information or raw credentials in .env file if you push the file to the repository.  
 > DO NOT push .env file to the repository if you include the sensitive information or raw credentials. Make sure to include .env file in .gitignore file.
 
 ## Set up your Google Cloud environment
